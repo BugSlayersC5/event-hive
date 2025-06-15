@@ -2,20 +2,23 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import EventDetail from "../components/EventDetail";
 import SimilarEvents from "../components/SimilarEvents";
-
+import bgImage from "../assets/images/event-img.jpg";
 
 export default function ViewEvent() {
-    return (
-        <>
-            <Navbar />
-            <section className="bg-[url('../assets/images/event-img.jpg')] bg-cover bg-center h-64 w-full">
-            <h1>Dream world wide in jakatra</h1>
-            <h2>IIIT</h2>
+  return (
+    <>
+      <Navbar />
+      <section
+        style={{ backgroundImage: `url(${bgImage})` }}
+        className=" bg-cover bg-center h-100 w-full"
+      >
+        <h1>Dream worldwide in Jakarta</h1>
+        <h2>IIIT</h2>
+      </section>
 
-            </section>
-            <EventDetail />
-            <SimilarEvents />
-            <Footer />
-        </>
-    );
+      <EventDetail />
+      <SimilarEvents />
+      <Footer />
+    </>
+  );
 }
