@@ -13,7 +13,8 @@ import Medium from "../assets/images/medium.png";
 import Zoom from "../assets/images/zoom.png";
 import Uber from "../assets/images/uber.png";   
 import Grab from "../assets/images/grab.png";
-import IllustrationImg from "../assets/images/banner.png"; // Adjust the path as necessary
+import IllustrationImg from "../assets/images/banner.png"; 
+import { Link } from "react-router";
 
 const brands = [
   { src: Spotify, alt: "Spotify" },
@@ -54,9 +55,11 @@ export default function Home() {
               Learn how to write, market, and publish your book in just 30 days
               with expert guidance.
             </p>
-            <button className="bg-[#7848F4] px-8 py-2 rounded-md text-white font-medium mt-6 my-6 md:mb-0">
+            <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start mt-2">
+            <Link to="/create-event" className="bg-[#7848F4] px-8 py-2 rounded-md text-white font-medium mt-6 my-6 md:mb-0">
               Create Event
-            </button>
+            </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -77,12 +80,12 @@ export default function Home() {
   {brands.map((brand, index) => (
     <div
       key={index}
-      className="flex flex-col items-center p-4 rounded-lg hover:bg-gray-50 transition-colors duration-200 cursor-pointer group"
+      className="flex flex-col items-center justify-center"
     >
       <img
         src={brand.src}
         alt={brand.alt}
-        className="h-20  w-25 mb-2 group-hover:scale-110 transition-transform duration-200"
+        className="h-auto  w-auto"
       />
     </div>
   ))}

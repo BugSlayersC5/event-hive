@@ -1,9 +1,37 @@
-export default function CollegeCard() {
-    return (
-        <div>
-            <img src={'https://images.unsplash.com/photo-1603437119287-4a3732b685f9?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} alt="College Card" />
-            <h1>Harvard University</h1>
-            <h2>Cambridge, Massachusetts, UK</h2>
+import { Star, MoreHorizontal } from 'lucide-react';
+
+export default function CollegeCard({ name, location, image, rating, badge }) {
+  return (
+    <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer">
+      <div className="relative">
+        <img 
+          src={image} 
+          alt={name}
+          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+        <div className="absolute top-4 right-4">
+          <span className="bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+            {badge}
+          </span>
         </div>
-    );
+        <div className="absolute bottom-4 left-4 flex items-center bg-black bg-opacity-50 text-white px-2 py-1 rounded">
+          <Star className="h-4 w-4 text-yellow-400 mr-1" fill="currentColor" />
+          <span className="text-sm font-medium">{rating}</span>
+        </div>
+      </div>
+      
+      <div className="p-6">
+        <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors duration-200">
+          {name}
+        </h3>
+        <p className="text-gray-600 text-sm mb-4">{location}</p>
+        
+        <div className="flex justify-end">
+          <button className="text-gray-400 hover:text-indigo-600 transition-colors duration-200">
+            <MoreHorizontal className="h-5 w-5" />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }
