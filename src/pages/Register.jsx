@@ -1,5 +1,6 @@
 import { useState } from "react";
 import GoogleIcon from "../assets/images/google-icon.png"
+import registerImage from "../assets/images/register.png"
 
 export default function Register() {
 
@@ -8,22 +9,25 @@ export default function Register() {
 
     return (
         <div className="flex h-screen font-sans">
-            {/* Left side */}
-            <div className="w-1/2 bg-cover bg-center relative bg-[url(../assets/images/register.png)]">
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white p-8">
+             <div style={{
+                           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${registerImage})`,
+                           zIndex: 0,
+                       }} className="w-1/2 bg-cover bg-center h-screen relative  ">
+           
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8">
                     <h1 className="text-4xl font-bold mb-4">Welcome back</h1>
                     <p className="mb-6 text-center">To keep connected with us provide us with your information</p>
                     <button className="bg-gray-300 text-black font-medium py-2 px-6 rounded-md">Sign In</button>
                 </div>
             </div>
 
-            {/* Right side */}
-           <form className="w-1/2 flex flex-col justify-center items-center bg-gray-50 px-16 space-y-6">
+           
+           <form className="w-1/2 flex flex-col justify-center items-center bg-gray-50 px-16 mx-auto">
 
-                <h2 className="text-2xl text-heading text-purple-600 font-semibold">Event <span className="text-black">Hive</span></h2>
-                <h1 className="text-2xl text-big-heading font-sans mt-4 mb-8">Sign Up to Event Hive</h1>
+                <h2 className="text-sm text-heading text-purple-600 font-semibold">Event <span className="text-black">Hive</span></h2>
+                <h1 className="text-2xl text-big-heading font-sans">Sign Up to Event Hive</h1>
                 <div className="w-full">
-                    <label htmlFor="name" className="text-black font-bold text-2xl uppercase"> Your Name</label>
+                    <label htmlFor="name" className="text-black font-bold text-sm uppercase"> Your Name</label>
                     <input
                         name="name"
                         value={form.name}
@@ -32,7 +36,7 @@ export default function Register() {
                     />
                 </div>
                 <div className="w-full">
-                    <label htmlFor="Username" className="text-black font-bold text-2xl uppercase"> Username</label>
+                    <label htmlFor="Username" className="text-black font-bold text-sm uppercase"> Username</label>
                     <input
                         name="name"
                         value={form.name}
@@ -42,7 +46,7 @@ export default function Register() {
                 </div>
 
                 <div className="w-full">
-                    <label htmlFor="Password" className="text-black font-bold text-2xl uppercase">Password</label>
+                    <label htmlFor="Password" className="text-black font-bold text-sm uppercase">Password</label>
                     <input
                         type="password"
                         name="password"
@@ -52,7 +56,7 @@ export default function Register() {
                     />
                 </div>
                 <div className="w-full">
-                    <label htmlFor="confirm password" className="text-black font-bold text-2xl uppercase">Confirm password</label>
+                    <label htmlFor="confirm password" className="text-black font-bold text-sm uppercase">Confirm password</label>
                     <input
                         type="password"
                         name="confirmPassword"

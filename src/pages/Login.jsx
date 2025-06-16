@@ -12,7 +12,7 @@ export default function Login() {
                 <h2 className="text-2xl text-heading text-purple-600 font-semibold">Event <span className="text-black">Hive</span></h2>
                 <h1 className="text-2xl text-big-heading font-sans mt-4 mb-8">Sign Up to Event Hive</h1>
                 <div className="w-full">
-                    <label htmlFor="email" className="text-black font-bold text-2xl uppercase"> Your Email</label>
+                    <label htmlFor="email" className="text-black font-bold text-sm uppercase"> Your Email</label>
                     <input
                         name="email"
                         value={form.name}
@@ -22,7 +22,7 @@ export default function Login() {
                 </div>
 
                 <div className="w-full">
-                    <label htmlFor="Password" className="text-black font-bold text-2xl uppercase">Password</label>
+                    <label htmlFor="Password" className="text-black font-bold text-sm uppercase">Password</label>
                     <input
                         type="password"
                         name="password"
@@ -46,12 +46,17 @@ export default function Login() {
             </form>
 
 
-            <div  style={{ backgroundImage: `url(${loginImage})`, minHeight: '500px' }} className="w-1/2 bg-cover bg-center relative  ">
-            
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white p-8">
+            <div style={{
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${loginImage})`,
+                zIndex: 0,
+            }} className="w-1/2 bg-cover bg-center h-screen relative  ">
+
+
+
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8  rounded-lg shadow-lg border border-opacity-10 border-white">
                     <h1 className="text-4xl font-bold mb-4">Hello Friend</h1>
-                    <p className="mb-6 text-center">To keep connected with us provide us with your information</p>
-                    <button className="bg-gray-300 text-black font-medium py-2 px-6 rounded-md">Sign In</button>
+                    <p className="mb-6 text-center">To keep connected with us, provide us with your information</p>
+                    <button className="bg-white text-black font-medium py-2 px-6 rounded-md hover:bg-gray-200 transition duration-300">Sign In</button>
                 </div>
             </div>
 
