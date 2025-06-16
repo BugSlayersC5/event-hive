@@ -21,18 +21,17 @@ export default function Login() {
                         className="w-full mb-4 p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
                     />
                 </div>
-
-                <div className="w-full">
+                <div className="w-full flex flex-row justify-between">
                     <label htmlFor="Password" className="text-black font-bold text-sm uppercase">Password</label>
-                    <input
-                        type="password"
-                        name="password"
-                        value={form.password}
-                        placeholder="Enter your password"
-                        className="w-full mb-4 p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
-                    />
+                    <label htmlFor="" className="text-gray-600">Forgot Password?</label>
                 </div>
-
+                <input
+                    type="password"
+                    name="password"
+                    value={form.password}
+                    placeholder="Enter your password"
+                    className="w-full mb-4 p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                />
 
                 <button className="w-1/3 bg-purple-600 text-white font-semibold py-3 rounded hover:bg-purple-700 transition mb-4">
                     Sign In
