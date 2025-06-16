@@ -1,7 +1,7 @@
 import React from 'react';
 import { Star, MoreHorizontal } from 'lucide-react';
 
-const colleges = [
+const college = [
     {
       name: "Harvard University",
       location: "Cambridge, Massachusetts, US",

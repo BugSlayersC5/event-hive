@@ -24,7 +24,7 @@ export default function NotFound() {
     <h1 className="text-center items-center justify-around mb-3">
 Follow us on
     </h1>
-    <div className="flex flex-row text-center gap-2 hover:text-blue-600 transition  text-gray-500 mb-3">
+    <div className="flex flex-row text-center gap-2 hover:text-blue-600 transition  text-gray-500">
 <  Instagram/>
 <FacebookIcon/>
 <Linkedin/>

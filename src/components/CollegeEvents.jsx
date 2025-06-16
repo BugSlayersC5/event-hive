@@ -1,4 +1,19 @@
+import CollegeCard from "./CollegeCard";
 import EventCard from "./EventCard";
+
+ const events = [{
+      title: "SaaS Meetup Brisbane - Metrics, Market & Business Your Book",
+      image: "https://images.pexels.com/photos/2747449/pexels-photo-2747449.jpeg?auto=compress&cs=tinysrgb&w=600",
+      date: "Saturday, Dec 16, 6:00 PM",
+      time: "6:00 PM - 9:00 PM",
+      location: "Brisbane, Australia",
+      price: "FREE",
+      category: "Business"
+    },
+
+
+
+]
 
 export default function CollegeEvents() {
     return (
