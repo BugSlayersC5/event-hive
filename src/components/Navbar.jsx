@@ -21,7 +21,7 @@ export default function Navbar () {
             <button className="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
               Login
             </button>
-            <button className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-200 transform hover:scale-105 font-medium shadow-lg">
+            <button className="bg-[#7848F4] from-purple-600 to-blue-600 text-white px-6 py-2 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-200 transform hover:scale-105 font-medium shadow-lg">
               Sign up
             </button>
           </div>
