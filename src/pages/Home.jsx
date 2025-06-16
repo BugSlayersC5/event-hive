@@ -34,7 +34,7 @@ export default function Home() {
       <HeroWithFilter />
       <UpcomingEvents />
       {/* Make your own event section goes here */}
-        <section className="py-10">
+        <section className="py-10 mt-20">
         <div className="relative bg-[#10107B] px-6 md:px-16 flex flex-col lg:flex-row justify-center items-center mx-auto">
           {/* Illustration Image */}
           <div className="  w-full lg:w-[40%] mb-8 lg:mb-0">
