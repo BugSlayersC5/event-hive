@@ -1,14 +1,12 @@
-import React from 'react';
 import { Calendar, Mail, Instagram, Twitter, Facebook } from 'lucide-react';
 
-const Footer = () => {
+export default function Footer () {
   return (
     <footer className="bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Newsletter Section */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center space-x-2 mb-4">
-            <Calendar className="h-8 w-8 text-purple-400" />
             <span className="text-2xl font-bold">
               Event <span className="text-purple-400">Hive</span>
             </span>
@@ -21,7 +19,7 @@ const Footer = () => {
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-3 rounded-l-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent backdrop-blur-sm"
               />
-              <button className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-r-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-200 font-medium">
+              <button className="bg-[#7848F4] from-purple-600 to-blue-600 text-white px-6 py-3 rounded-r-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-200 font-medium">
                 Subscribe
               </button>
             </div>
@@ -62,4 +60,3 @@ const Footer = () => {
   );
 };
 
-export default Footer;
