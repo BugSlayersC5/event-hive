@@ -1,6 +1,7 @@
 import { useState } from "react";
 import GoogleIcon from "../assets/images/google-icon.png"
 import registerImage from "../assets/images/register.png"
+import { Link } from "react-router";
 
 export default function Register() {
 
@@ -17,7 +18,7 @@ export default function Register() {
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8">
                     <h1 className="text-4xl font-bold mb-4">Welcome back</h1>
                     <p className="mb-6 text-center">To keep connected with us provide us with your information</p>
-                    <button className="bg-gray-300 text-black font-medium py-2 px-6 rounded-md">Sign In</button>
+                    <Link to={'/login'} className="bg-gray-300 text-black font-medium py-2 px-6 rounded-md">Sign In</Link>
                 </div>
             </div>
 
@@ -36,7 +37,7 @@ export default function Register() {
                     />
                 </div>
                 <div className="w-full">
-                    <label htmlFor="Username" className="text-black font-bold text-sm uppercase"> Username</label>
+                    <label htmlFor="email" className="text-black font-bold text-sm uppercase"> Your Email</label>
                     <input
                         name="name"
                         value={form.name}
