@@ -1,30 +1,5 @@
 import CollegeCard from './CollegeCard'; 
 
-<<<<<<< HEAD
-const colleges = [
-  {
-    name: "Harvard University",
-    location: "Cambridge, Massachusetts, US",
-    image: "https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=600",
-    rating: 4.9,
-    badge: "EXCLUSIVE"
-  },
-  {
-    name: "Stanford University",
-    location: "Stanford, California",
-    image: "https://images.pexels.com/photos/159490/yale-university-landscape-universities-schools-159490.jpeg?auto=compress&cs=tinysrgb&w=600",
-    rating: 4.8,
-    badge: "EXCLUSIVE"
-  },
-  {
-    name: "Nanyang University",
-    location: "Nanyang Ave, Singapore",
-    image: "https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=600",
-    rating: 4.6,
-    badge: "EXCLUSIVE"
-  }
-];
-=======
 const college = [
     {
       name: "Harvard University",
@@ -49,9 +24,7 @@ const college = [
     }
   ];
 
-export default function TrendingColleges () {
   
->>>>>>> 984e690c7c88ea15d722fa3e26357cd8a641a78f
 
 export default function TrendingColleges() {
   return (
@@ -64,7 +37,7 @@ export default function TrendingColleges() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {colleges.map((college, index) => (
+          {college.map((college, index) => (
             <CollegeCard
               key={index}
               name={college.name}

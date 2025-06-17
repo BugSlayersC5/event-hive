@@ -61,7 +61,6 @@ const EventsSection = () => {
   ];
 
   return (
-<<<<<<< HEAD
     <section className="py-16 bg-gray-50 mt-12">
       <div className="max-w-7xl mx-auto  w-[95%]">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-12 space-y-4 md:space-y-0">
@@ -103,48 +102,6 @@ const EventsSection = () => {
   </div>
 </div>
 
-=======
-    <section className="py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center mb-12">
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
-              Upcoming <span className="text-purple-600">Events</span>
-            </h2>
-          </div>
-          
-          <div className="flex space-x-4">
-            <div className="relative">
-              <select className="appearance-none bg-white border border-gray-200 rounded-lg px-4 py-2 pr-8 focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                <option>Weekdays</option>
-                <option>Weekends</option>
-                <option>Any day</option>
-              </select>
-              <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-            </div>
-            
-            <div className="relative">
-              <select className="appearance-none bg-white border border-gray-200 rounded-lg px-4 py-2 pr-8 focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                <option>Event Type</option>
-                <option>Conference</option>
-                <option>Workshop</option>
-                <option>Networking</option>
-              </select>
-              <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-            </div>
-            
-            <div className="relative">
-              <select className="appearance-none bg-white border border-gray-200 rounded-lg px-4 py-2 pr-8 focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                <option>Any category</option>
-                <option>Business</option>
-                <option>Technology</option>
-                <option>Creative</option>
-              </select>
-              <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-            </div>
-          </div>
-        </div>
->>>>>>> 984e690c7c88ea15d722fa3e26357cd8a641a78f
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {events.map((event, index) => (
