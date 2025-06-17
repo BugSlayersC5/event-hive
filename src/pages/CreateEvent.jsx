@@ -81,12 +81,9 @@ export default function CreateEvent() {
                         <h2 className=" font mt-30 text start">Event Description</h2>
                           <div className="bg-white w-2xl h-50 mt-5  p-4 "></div>
                     </div>
+
+                    <button className="bg-purple-800 rounded-md p-6">Create Event</button>
                     </div>
-
-                   
-
-                    
-
                 </section>
             </section>
 

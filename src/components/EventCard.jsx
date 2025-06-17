@@ -1,6 +1,7 @@
 import { Calendar, MapPin, Clock } from 'lucide-react';
 
 
+
 export default function EventCard  ({ title, image, date, time, location, price, category }) {
   return (
     <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer">
