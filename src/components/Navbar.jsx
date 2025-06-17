@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Calendar, Menu, X } from 'lucide-react';
+import { Link } from 'react-router';
 
 export default function Navbar () {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,12 +19,12 @@ export default function Navbar () {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
+            <Link to="/login" className="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium cursor-pointer">
               Login
-            </button>
-            <button className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-200 transform hover:scale-105 font-medium shadow-lg">
+            </Link >
+            <Link to="/register" className="bg-[#7848F4] from-purple-600 to-blue-600 text-white px-6 py-2 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-200 transform hover:scale-105 font-medium shadow-lg cursor-pointer">
               Sign up
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Clock, MapPin } from 'lucide-react';
 
 
@@ -40,7 +39,7 @@ export default function EventCard ({ event }) {
         </div>
         
         <div className="mt-4 pt-4 border-t border-gray-100">
-          <button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-200 font-medium">
+          <button className="w-full bg-[#7848F4] from-purple-600 to-blue-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-200 font-medium">
             View Details
           </button>
         </div>
