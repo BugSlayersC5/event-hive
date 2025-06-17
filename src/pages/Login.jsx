@@ -7,64 +7,84 @@ import { useNavigate } from "react-router";
 
 
 export default function Login() {
-    const navigate =useNavigate();
+    const navigate = useNavigate();
 
     const loginUser = async (data) => {
         try {
-           const response =await apiClient.post("/users/login",data, {headers:
-            {
-                "Content-Type":"application/json"
-            }
-           });
-           console.log(response);
-           localStorage.setItem("ACCESS_TOKEN",response.data.accessToken);
-           navigate('/');
-           
+            const response = await apiClient.post("/users/login", data, {
+                headers:
+                {
+                    "Content-Type": "application/json"
+                }
+            });
+            console.log(response);
+            localStorage.setItem("ACCESS_TOKEN", response.data.accessToken);
+            navigate('/');
+
         } catch (error) {
             console.log(error)
-            
+
         }
     }
 
     return (
         <div className="flex h-screen font-sans">
-            <form action={loginUser} className="w-1/2 min-h-screen flex flex-col justify-center items-center bg-gray-50 px-16 space-y-6">
 
-                <h2 className="text-2xl text-heading text-purple-600 font-semibold">Event <span className="text-black">Hive</span></h2>
-                <h1 className="text-2xl text-big-heading font-sans mt-4 mb-8">Sign In to Event Hive</h1>
-                <div className="w-full">
-                    <label htmlFor="email" className="text-black font-bold text-sm uppercase"> Your Email</label>
+            <div className="w-1/2 min-h-screen flex flex-col justify-center items-center bg-gray-50 px-16 space-y-6">
+                <form action={loginUser} className="w-full flex flex-col justify-center items-center space-y-6">
+
+                    <h2 className="text-2xl text-heading text-purple-600 font-semibold">
+                        Event <span className="text-black">Hive</span>
+                    </h2>
+                    <h1 className="text-2xl text-big-heading font-sans mt-4 mb-8">
+                        Sign In to Event Hive
+                    </h1>
+
+                    <div className="w-full">
+                        <label htmlFor="email" className="text-black font-bold text-sm uppercase">
+                            Your Email
+                        </label>
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            className="w-full mb-4 p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                        />
+                    </div>
+
+                    <div className="w-full flex flex-row justify-between">
+                        <label htmlFor="password" className="text-black font-bold text-sm uppercase">
+                            Password
+                        </label>
+                        <span className="text-gray-600 text-sm cursor-pointer hover:underline">
+                            Forgot Password?
+                        </span>
+                    </div>
+
                     <input
-                        type="email"
-                        name="email"
-                        placeholder="Enter your email"
+                        type="password"
+                        name="password"
+                        placeholder="Enter your password"
                         className="w-full mb-4 p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
                     />
-                </div>
-                <div className="w-full flex flex-row justify-between">
-                    <label htmlFor="Password" className="text-black font-bold text-sm uppercase">Password</label>
-                    <label htmlFor="" className="text-gray-600">Forgot Password?</label>
-                </div>
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Enter your password"
-                    className="w-full mb-4 p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
-                />
 
-                <SubmitButton 
-                title={"sign in" }
-                className="w-1/3 bg-purple-600 text-white font-semibold py-3 rounded hover:bg-purple-700 transition mb-4"
-                    Sign In
-                />
+                    <SubmitButton
+                        title={"sign in"}
+                        type="submit"
+                        className="w-1/3 bg-purple-600 text-white font-semibold py-3 rounded hover:bg-purple-700 transition mb-4"
+                    />
+                </form>
 
                 <div className="mb-4 text-gray-500">Or</div>
 
-                <button className="w-1/2 border border-gray-300 flex items-center justify-center py-3 rounded hover:bg-gray-100">
+                <button
+                    type="button"
+                    className="w-full border border-gray-300 flex items-center justify-center py-3 rounded hover:bg-gray-100"
+                >
                     <img src={googleIcon} alt="Google" className="w-5 h-5 mr-2" />
                     Sign In with Google
                 </button>
-            </form>
+            </div>
 
 
             <div style={{

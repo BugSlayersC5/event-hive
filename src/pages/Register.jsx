@@ -37,60 +37,61 @@ export default function Register() {
             </div>
 
 
-            <form action={registerUser} className="w-1/2 flex flex-col justify-center items-center bg-gray-50 px-16 mx-auto">
+            <div className="w-1/2 flex flex-col justify-center items-center bg-gray-50 px-16 mx-auto">
+                <form action={registerUser} className="w-full flex flex-col justify-center items-center">
+                    <h2 className="text-sm text-heading text-purple-600 font-semibold">
+                        Event <span className="text-black">Hive</span>
+                    </h2>
+                    <h1 className="text-2xl text-big-heading font-sans">Sign Up to Event Hive</h1>
 
-                <h2 className="text-sm text-heading text-purple-600 font-semibold">Event <span className="text-black">Hive</span></h2>
-                <h1 className="text-2xl text-big-heading font-sans">Sign Up to Event Hive</h1>
-                <div className="w-full">
-                    <label htmlFor="name" className="text-black font-bold text-sm uppercase"> Your Name</label>
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Enter your name"
-                        className="w-full mb-4 p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                    <div className="w-full">
+                        <label htmlFor="name" className="text-black font-bold text-sm uppercase">Your Name</label>
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Enter your name"
+                            className="w-full mb-4 p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                        />
+                    </div>
+
+                    <div className="w-full">
+                        <label htmlFor="email" className="text-black font-bold text-sm uppercase">Your Email</label>
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Create user name"
+                            className="w-full mb-4 p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                        />
+                    </div>
+
+                    <div className="w-full">
+                        <label htmlFor="password" className="text-black font-bold text-sm uppercase">Password</label>
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            className="w-full mb-4 p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                        />
+                    </div>
+
+                    <SubmitButton
+                        title={"Sign up"}
+                        type="submit"
+                        className="w-1/3 bg-purple-600 text-white font-semibold py-3 rounded hover:bg-purple-700 transition mb-4"
                     />
-                </div>
-                <div className="w-full">
-                    <label htmlFor="email" className="text-black font-bold text-sm uppercase"> Your Email</label>
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Create user name"
-                        className="w-full mb-4 p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
-                    />
-                </div>
+                </form>
 
-                <div className="w-full">
-                    <label htmlFor="Password" className="text-black font-bold text-sm uppercase">Password</label>
-                    <input
-                        type="password"
-                        name="password"
-                        placeholder="Enter your password"
-                        className="w-full mb-4 p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
-                    />
-                </div>
-                {/* <div className="w-full">
-                    <label htmlFor="confirm password" className="text-black font-bold text-sm uppercase">Confirm password</label>
-                    <input
-                        type="password"
-                        name="confirmPassword"
-                        placeholder="Confirm your password"
-                        className="w-full mb-6 p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
-                    />
-                </div> */}
+                <div className="my-4 text-gray-500">Or</div>
 
-                <SubmitButton
-                    title={"Sign up"} type="submit" className="w-1/3 bg-purple-600 text-white font-semibold py-3 rounded hover:bg-purple-700 transition mb-4"
-                    Sign Up
-                />
-            </form>
+                <button
+                    type="button"
+                    className="w-full border border-gray-300 flex items-center justify-center py-3 rounded hover:bg-gray-100"
+                >
+                    <img src={googleIcon} alt="Google" className="w-5 h-5 mr-2" />
+                    Sign up with Google
+                </button>
+            </div>
 
-            <div className="mb-4 text-gray-500">Or</div>
-
-            <button type="submit" className="w-1/2 border border-gray-300 flex items-center justify-center py-3 rounded hover:bg-gray-100">
-                <img src={googleIcon} alt="Google" className="w-5 h-5 mr-2" />
-                Sign up with Google
-            </button>
         </div>
     );
 }
