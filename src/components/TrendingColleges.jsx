@@ -1,32 +1,29 @@
-import CollegeCard from './CollegeCard'; 
-
-const college = [
-    {
-      name: "Harvard University",
-      location: "Cambridge, Massachusetts, US",
-      image: "https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=600",
-      rating: 4.9,
-      badge: "EXCLUSIVE"
-    },
-    {
-      name: "Stanford University",
-      location: "Stanford, California",
-      image: "https://images.pexels.com/photos/159490/yale-university-landscape-universities-schools-159490.jpeg?auto=compress&cs=tinysrgb&w=600",
-      rating: 4.8,
-      badge: "EXCLUSIVE"
-    },
-    {
-      name: "Nanyang University",
-      location: "Nanyang Ave, Singapore",
-      image: "https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=600",
-      rating: 4.6,
-      badge: "EXCLUSIVE"
-    }
-  ];
-
-  
+import CollegeCard from "./CollegeCard";
+import useSWR from "swr";
+import { apiFetcher } from "../api/client";
+import { ClipLoader } from "react-spinners";
 
 export default function TrendingColleges() {
+  // where "/colleges" is url
+  // limit = 3 should limit your cards to 3 && skip=4 means it should skip the first 4
+  const { data, error, isLoading } = useSWR("/colleges?limit=3&skip=4", apiFetcher);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center">
+        <ClipLoader size={100} />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex justify-center items-center">
+        <p className="text-red-600 text-9xl">Something went wrong</p>
+      </div>
+    );
+  }
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,15 +34,8 @@ export default function TrendingColleges() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {college.map((college, index) => (
-            <CollegeCard
-              key={index}
-              name={college.name}
-              location={college.location}
-              image={college.image}
-              rating={college.rating}
-              badge={college.badge}
-            />
+          {data.data.map((college) => (
+            <CollegeCard key={college.id} college={college} />
           ))}
         </div>
 
