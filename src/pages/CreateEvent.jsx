@@ -1,7 +1,11 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Link } from "react-router";
+import useSWR from "swr";
+import { apiFetcher } from "../api/client";
 
 export default function CreateEvent() {
+    const { data } = useSWR("/colleges", apiFetcher)
     return (
         <>
             <Navbar />
@@ -9,6 +13,15 @@ export default function CreateEvent() {
                 <h1 className="text-center font-bold text-black text-4xl">Welcome to the Create Event Page</h1>
 
                 <div className="mb-4 bg-gray w-[60%]">
+                    <label htmlFor="event name" className="block mb-2 text-sm font-medium text-gray-700">
+                        College
+                    </label>
+                    <select className="w-full p-3 rounded-md bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" name="college" id="">
+                       {data?.data.map((college) => {
+                        return <option key={college.id} value= {college.id}>{college.name}</option>
+                       })}
+                    </select>
+
                     <label htmlFor="event name" className="block mb-2 text-sm font-medium text-gray-700">
                         Event Title
                     </label>
@@ -64,27 +77,32 @@ export default function CreateEvent() {
                                 className="w-full bg-white p-3 mb-4 rounded-md text-gray-700 placeholder-gray-400 focus-outline focus-ring-2 focus-ring-blue-500" />
                         </div>
 
-                       
+
                     </div>
                 </div>
 
-                <section className="flex flex-col-reverse items-center justify-center mx-auto gap-6 mt-15">
+                <section className="flex flex-col-reverse items-center justify-center mx-auto gap-6 mt-30">
                     <div>
                         <h2 className="text-2xl font-bold ">Event Discriptionn</h2>
                         <h2 className=" mt-10 mx-5">Event Image</h2>
 
                         <div className="bg-gray-300 w-2xl h-50 mt-5  p-4 ">
-                        
+
+                        </div>
+
+                        <div>
+                            <h2 className=" font mt-30 text start">Event Description</h2>
+                            <div className="bg-white w-2xl h-50 mt-5 p-4 ">
+                                <input placeholder="Type Here" />
+                            </div>
+                        </div>
                     </div>
 
-                     <div>
-                        <h2 className=" font mt-30 text start">Event Description</h2>
-                          <div className="bg-white w-2xl h-50 mt-5  p-4 "></div>
-                    </div>
-
-                    <button className="bg-purple-800 rounded-md p-6">Create Event</button>
-                    </div>
                 </section>
+
+                <div>
+                    <Link to='/view-event' className="bg-purple-600 rounded-md py-2 px-50 text-white justify-center mt-5 mx-65">Create Event</Link>
+                </div>
             </section>
 
 
