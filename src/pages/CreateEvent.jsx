@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { Link } from "react-router";
+import { Link, Navigate } from "react-router";
 import useSWR from "swr";
 import { apiFetcher, apiClient } from "../api/client";
 import SubmitButton from "../components/Submitbutton";
@@ -26,6 +26,13 @@ export default function CreateEvent() {
 
         }
 
+    }
+
+    if(!localStorage.getItem("ACCESS_TOKEN")) {
+        return (
+            // this navigate component redirects the user to the login page if they are not authenticated
+            <Navigate to="/login" />
+        );
     }
 
     return (
