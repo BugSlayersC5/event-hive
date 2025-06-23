@@ -1,11 +1,24 @@
 import React, { useState } from 'react';
 import { Calendar, Menu, X } from 'lucide-react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import useSWR from "swr";
+import { apiFetcher } from "../api/client";
 
 export default function Navbar () {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+    const { data } = useSWR("/users/profile", apiFetcher);
+
+    const Navigate = useNavigate();
+
+    const Logout = () => {
+      localStorage.removeItem("ACCESS_TOKEN");
+      // window.location.href = "/login";
+      Navigate("/login");
+
+    }
 
   return (
     <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
@@ -15,6 +28,11 @@ export default function Navbar () {
             <span className="text-xl font-bold text-gray-900">
               Event <span className="text-purple-600">Hive</span>
             </span>
+          </div>
+
+          <div>
+          <h1>{data?.data?.name || "Unknown User"} </h1>
+            <button className='bg-red-500 text-white px-4 py-2 rounded-md'  onClick={Logout} >Logout</button>
           </div>
 
           {/* Desktop Menu */}
