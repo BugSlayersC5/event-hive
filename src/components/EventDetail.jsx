@@ -2,7 +2,6 @@ import map from "../assets/images/group21.png";
 import { useSearchParams } from "react-router";
 import useSWR from "swr";
 import { apiFetcher, imageBaseURL } from "../api/client";
-import bgImage from "../assets/images/event-img.jpg";
 import { useEffect } from "react";
 
 export default function EventDetail() {
